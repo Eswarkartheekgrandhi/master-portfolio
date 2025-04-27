@@ -1,0 +1,234 @@
+import { useEffect, useState } from 'react';
+import { Mail, Calendar } from 'lucide-react';
+import heroImage from '../assets/react.svg';
+import { Tools , ArrowRight } from 'lucide-react';
+
+export default function Hero() {
+  const [timeIST, setTimeIST] = useState('');
+
+  useEffect(() => {
+    const updateIST = () => {
+      const now = new Date();
+      const istOffset = 5.5 * 60;
+      const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+      const istTime = new Date(utc + istOffset * 60000);
+      const hours = istTime.getHours().toString().padStart(2, '0');
+      const minutes = istTime.getMinutes().toString().padStart(2, '0');
+      const seconds = istTime.getSeconds().toString().padStart(2, '0');
+      setTimeIST(`${hours}:${minutes}:${seconds}`);
+    };
+
+    updateIST();
+    const interval = setInterval(updateIST, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const experiences = [
+    {
+      company: 'Vortex',
+      role: 'Product Designer',
+      duration: '2023 - Present',
+      description:
+        'Headed product design initiatives, defined design strategy, and ensured alignment with business objectives for market-leading products.',
+      companyType: 'Tech Firm',
+      companyLink: 'https://vortex.com', // Add the link here
+      logo: 'https://via.placeholder.com/40',
+    },
+    {
+      company: 'PixelWorks',
+      role: 'Senior UI/UX Designer',
+      duration: '2022 - 2023',
+      description:
+        'Provided leadership in UI/UX design, mentored junior designers, and collaborated with cross-functional teams for product excellence.',
+      companyType: 'Design Studio',
+      companyLink: 'https://pixelworks.com', // Add the link here
+      logo: 'https://via.placeholder.com/40',
+    },
+    // Add more experiences here if needed
+  ];
+
+  return (
+    <>
+      <style>
+        {`
+          @keyframes wave {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+            60% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+          }
+        `}
+      </style>
+
+      <section className="relative flex flex-col pt-40 overflow-hidden text-white px-4 sm:px-6 md:pl-[160px] md:pr-[160px] lg:pl-[200px] lg:pr-[200px] xl:pl-[240px] xl:pr-[240px]">
+        {/* Top Bar */}
+        <div className="absolute top-0 left-0 w-full px-4 sm:px-6 md:px-[160px] lg:px-[200px] xl:px-[150px] py-4 text-xs sm:text-sm tracking-widest z-10 border-b-[2px] border-stone-600/40">
+          <div className="hidden lg:flex justify-between items-center">
+            <div className="flex items-center gap-2 border border-white text-white px-3 py-1 rounded-full">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <p>Available For Work</p>
+            </div>
+
+            <p className="text-stone-300">
+              Local Time (IST):{' '}
+              <span className="border border-white px-3 py-1 rounded-full text-white font-mono">
+                {timeIST}
+              </span>
+            </p>
+          </div>
+
+          {/* Mobile Nav - Centered */}
+          <div className="flex lg:hidden justify-center mt-2">
+            <div className="flex gap-4 text-white text-xs sm:text-sm">
+              <a href="#home" className="hover:underline">Home</a>
+              <a href="#services" className="hover:underline">Services</a>
+              <a href="#contact" className="hover:underline">Contact</a>
+            </div>
+          </div>
+        </div>
+
+        {/* Hero Content */}
+        <div className="flex flex-col items-center justify-center text-center gap-8">
+          <div className="flex lg:flex-row lg:items-start md:flex-row sm:flex-row items-center gap-14 text-left">
+            <img
+              src={heroImage}
+              alt="Hero"
+              className="w-28 h-28 object-contain animate-pulse"
+            />
+            <div>
+              <h1 className="text-lg sm:text-xl text-stone-400">
+                <span
+                  className="inline-block"
+                  style={{
+                    display: 'inline-block',
+                    animation: 'wave 2s infinite',
+                    transformOrigin: '70% 70%',
+                  }}
+                >
+                  👋
+                </span>
+                Hello I Am
+              </h1>
+
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-2">
+                Eswar Kartheek Grandhi
+              </h2>
+              <p className="hidden lg:block md:block text-stone-300 max-w-xl text-sm sm:text-base mt-2">
+                Passionate about building beautiful, interactive digital experiences and solving real-world problems through clean, efficient code.
+              </p>
+              <div className="hidden lg:flex md:flex gap-4 mt-4">
+                <button className="px-6 py-2 rounded-full border border-white text-white hover:bg-white hover:text-black transition">
+                  View Work
+                </button>
+                <button className="px-6 py-2 rounded-full border border-stone-400 text-stone-300 hover:border-white hover:text-white transition">
+                  Contact Me
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <p className="block lg:hidden md:hidden text-stone-300 max-w-xl text-sm sm:text-base mt-2">
+            Passionate about building beautiful, interactive digital experiences and solving real-world problems through clean, efficient code.
+          </p>
+
+          <div className="flex lg:hidden md:hidden gap-4 mt-4">
+            <button className="px-6 py-2 rounded-full border border-white text-white hover:bg-white hover:text-black transition">
+              View Work
+            </button>
+            <button className="px-6 py-2 rounded-full border border-stone-400 text-stone-300 hover:border-white hover:text-white transition">
+              Contact Me
+            </button>
+          </div>
+        </div>
+
+        {/* Experience Section */}
+        <div className="flex flex-col gap-6 w-full max-w-4xl mx-auto mt-20">
+          <div className="flex items-center gap-2">
+            <Calendar className="text-white w-5 h-5" />
+            <h2 className="text-white text-lg font-semibold tracking-wide">My Experience</h2>
+          </div>
+          <p className="text-stone-400 text-sm mb-2 text-left">
+          Navigating diverse environments with adaptability and expertise for holistic solutions.
+          </p>
+
+          {/* Map over the experiences */}
+          {experiences.map((experience, index) => (
+            <div key={index} className="border border-stone-700 p-6 rounded-xl">
+              <div className="flex items-start justify-between">
+                <div className="flex items-center gap-4">
+                  <img
+                    src={experience.logo}
+                    alt={experience.company}
+                    className="w-10 h-10 rounded bg-white"
+                  />
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-4">
+                      <h3 className="text-white font-semibold">{experience.company}</h3>
+                      <span className="text-xs bg-gray-700 text-white px-2 py-1 rounded-full">
+                        {experience.companyType}
+                      </span>
+                    </div>
+                    <a
+                      href={experience.companyLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-stone-400 text-sm hover:underline mt-1 text-left"
+                    >
+                      {experience.companyLink}
+                    </a>
+                  </div>
+                </div>
+                <p className="text-white font-semibold text-sm">{experience.duration}</p>
+              </div>
+
+              <div className="mt-4 text-left border border-stone-600 rounded-lg p-4">
+                <h4 className="text-white font-medium">{experience.role}</h4>
+                <p className="text-stone-400 text-sm mt-2">{experience.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* My Stacks Section */}
+        <div className="flex flex-col gap-6 w-full max-w-4xl mx-auto mt-24">
+          <div className="flex items-center gap-2 text-white text-lg font-semibold tracking-wide">
+            <Tools className="w-5 h-5 text-white" />
+            <span>My Stacks</span>
+          </div>
+
+          <p className="text-stone-400 text-sm mb-2 text-left">
+            Commitment to staying updated with the latest design trends and techniques.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { name: 'Figma', type: 'Interface Design Tool', icon: '/icons/figma.svg' },
+              { name: 'Notion', type: 'Productivity Tool', icon: '/icons/notion.svg' },
+              { name: 'Webflow', type: 'No Code Design Tool', icon: '/icons/webflow.svg' },
+              { name: 'Framer', type: 'No Code Design Tool', icon: '/icons/framer.svg' },
+              { name: 'Slack', type: 'Productivity Tool', icon: '/icons/slack.svg' },
+              { name: 'Asana', type: 'Productivity Tool', icon: '/icons/asana.svg' },
+            ].map((tool, index) => (
+              <div key={index} className="flex items-center justify-between border border-stone-700 rounded-xl px-4 py-3 hover:bg-stone-800 transition">
+                <div className="flex items-center gap-3">
+                  <img src={tool.icon} alt={tool.name} className="w-8 h-8" />
+                  <div className="flex flex-col">
+                    <span className="text-white font-semibold">{tool.name}</span>
+                    <span className="text-sm text-stone-400">{tool.type}</span>
+                  </div>
+                </div>
+                <ArrowRight className="text-white w-5 h-5" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+
+      </section>
+    </>
+  );
+}

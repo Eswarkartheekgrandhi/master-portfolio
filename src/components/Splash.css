@@ -1,0 +1,60 @@
+.splash-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 50;
+  }
+  
+  .typing-animation {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite, hold 2s 4s forwards;
+    color: white;
+  }
+  
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    0%,
+    50%,
+    100% {
+      border-color: transparent;
+    }
+    25%,
+    75% {
+      border-color: white;
+    }
+  }
+  
+  @keyframes hold {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  .typing-animation::after {
+    content: '|';
+    margin-left: 5px;
+    border-right: 2px solid white;
+    padding-right: 2px;
+    animation: blink 0.75s step-end infinite;
+  }
+  
