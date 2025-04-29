@@ -20,7 +20,7 @@ import iiithImage from '../assets/iiith.jpeg';
 import vsImage from '../assets/vs.png';
 import dockerImage from '../assets/docker.webp';
 import nodejsImage from '../assets/nodejs.png';
-import {BriefcaseBusiness, ArrowRight, Link2, Download } from 'lucide-react';
+import {BriefcaseBusiness, ArrowRight, Link2, Download, Rocket } from 'lucide-react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaGithub } from 'react-icons/fa';
 import { WhatsApp } from '@mui/icons-material';
 
@@ -139,16 +139,16 @@ const projects = [
     image: '/images/lc-platform-thumbnail.png', 
     techStack: ['ReactJS', 'Flask', 'PostgreSQL', 'Text Processing', 'Model Integration']
   },
-  {
-    title: 'OmniFood',
-    link: 'https://omnifood-554.netlify.app/',
-    type: 'Web Development',
-    pages: 4,
-    theme: 'Dark Theme',
-    description: 'Showcasing expertise, passion, and innovation in the realm of development. Features responsive design and dynamic layout for a seamless user experience.',
-    image: omniImage, 
-    techStack: ['HTML', 'CSS', 'JavaScript']
-  },
+  // {
+  //   title: 'OmniFood',
+  //   link: 'https://omnifood-554.netlify.app/',
+  //   type: 'Web Development',
+  //   pages: 4,
+  //   theme: 'Dark Theme',
+  //   description: 'Showcasing expertise, passion, and innovation in the realm of development. Features responsive design and dynamic layout for a seamless user experience.',
+  //   image: omniImage, 
+  //   techStack: ['HTML', 'CSS', 'JavaScript']
+  // },
 ];
 
   const [isExpanded, setIsExpanded] = useState(false);
@@ -440,15 +440,17 @@ const projects = [
         </div>
 
         {/* Creative Design Showcase */}
-        <div id="projects" className="flex flex-col gap-6 w-full max-w-4xl mx-auto mt-24">
+        <div id="projects" className="flex flex-col  w-full max-w-4xl mx-auto mt-24">
           <motion.div 
             initial={{ opacity: 0, y: 20 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.4 }} 
             viewport={{ once: true }}
-            className="text-white text-left font-semibold tracking-wide"
+            className="flex items-center gap-2 text-white text-lg font-semibold tracking-wide mb-3"
           >
-            🚀 Creative Design Showcase
+            {/* 🚀 Creative Design Showcase */}
+            <Rocket className="w-5 h-5 text-white" />
+            <span>Creative Design Showcase</span>
           </motion.div>
 
           <motion.p 
@@ -456,11 +458,12 @@ const projects = [
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5, delay: 0.2 }} 
             viewport={{ once: true }}
-            className="text-stone-400 text-sm mb-2 text-left"
+            className="text-stone-400 text-base mb-3 text-left"
           >
             A curated display of projects blending design and functionality to deliver memorable digital experiences.
           </motion.p>
 
+          <div className="flex flex-col gap-y-6">
           {visibleProjects.map((project, index) => (
             <motion.div
               key={index}
@@ -513,8 +516,9 @@ const projects = [
               </div>
             </motion.div>
           ))}
+          </div>
 
-          {projects.length > 2 && (
+          {/* {projects.length > 2 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -539,7 +543,40 @@ const projects = [
 
               
             </motion.div>
+          )} */}
+          {projects.length > 2 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="flex justify-center mt-6 gap-4 flex-col md:flex-row"
+            >
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-white bg-[#141415] px-6 py-2 rounded-xl w-full hover:bg-[#232323] transition"
+              >
+                {isExpanded ? "View Less" : "View More"}
+              </button>
+            </motion.div>
           )}
+
+          {/* Always visible GitHub button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-4"
+          >
+            <button
+              onClick={() => window.open('https://github.com/Eswarkartheekgrandhi?tab=repositories', '_blank')}
+              className="text-white bg-[#141415] px-6 py-2 rounded-xl w-full hover:bg-[#232323] transition"
+            >
+              View More Projects on GitHub
+            </button>
+          </motion.div>
+
         </div>
 
 
