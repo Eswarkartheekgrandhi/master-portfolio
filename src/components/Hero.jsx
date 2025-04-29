@@ -12,7 +12,7 @@ import postgresImage from '../assets/postgres.png';
 import postmanImage from '../assets/postman.png';
 import mongodbImage from '../assets/mongodb.png';
 import cssImage from '../assets/css.png';
-import picture from '../assets/pic.jpg';
+import picture from '../assets/pic1.jpg';
 import omniImage from '../assets/omni.png';
 import figmaImage from '../assets/figma.svg';
 import webdImage from '../assets/webd.png';
@@ -202,14 +202,14 @@ const projects = [
         </div>
 
         {/* Hero Content */}
-        <div className="flex flex-col items-center justify-center text-center gap-8">
-          <div className="flex lg:flex-row lg:items-start md:flex-row sm:flex-row items-center gap-14 text-left max-w-none max-h-none">
+        <div className="flex flex-col items-center justify-center text-center gap-8 ">
+          <div className="flex lg:flex-row lg:items-start md:flex-row sm:flex-row items-center lg:gap-14 md:gap-15 sm:gap-1 gap-7 text-left max-w-none max-h-none">
             <img
               src={picture}
               alt="Hero"
-              className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover"
+              className="w-35 h-40 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-58 object-cover"
             />
-            <div>
+            <div className='lg:mt-7'>
               <h1 className="text-lg sm:text-xl text-[#919191]">
                 <span
                   className="inline-block"
@@ -263,12 +263,12 @@ const projects = [
             Passionate about building beautiful, interactive digital experiences and solving real-world problems through clean, efficient code.
           </p>
 
-          <div className="flex lg:hidden md:hidden gap-4 mt-4 w-full">
+          <div className="flex flex-col justify-center items-center lg:hidden md:hidden gap-4 mt-4 w-full">
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=eswarkartheekgrandhi@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-1/2"
+              className="w-full"
             >
               <button className="w-full px-4 py-2 rounded-2xl text-[#979797] hover:bg-white hover:text-black bg-[#141415] transition flex items-center justify-center gap-2 whitespace-nowrap">
                 <Mail size={18} />
@@ -280,7 +280,7 @@ const projects = [
               href="https://drive.google.com/file/d/1ZXPnF91Hn_GIkCoBJy2HUOnYq-q7WXei/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-1/2"
+              className="w-full"
             >
               <button className="w-full px-4 py-2 rounded-2xl text-[#979797] hover:border-white hover:text-white transition bg-[#141415] flex items-center justify-center gap-2 border border-transparent whitespace-nowrap">
                 <Download size={18} />
