@@ -140,15 +140,15 @@ const projects = [
     techStack: ['ReactJS', 'Flask', 'PostgreSQL', 'Text Processing', 'Model Integration']
   },
   {
-    title: 'Zenith Gym',
-    link: 'https://zenith.com',
-    type: 'Fitness',
-    pages: 5,
-    theme: 'Light Theme',
-    description: 'Empowering fitness enthusiasts with an immersive online experience, featuring modern web technologies for seamless interaction and engagement.',
-    image: '/images/zenith-gym-thumbnail.png', 
+    title: 'OmniFood',
+    link: 'https://omnifood-554.netlify.app/',
+    type: 'Web Development',
+    pages: 4,
+    theme: 'Dark Theme',
+    description: 'Showcasing expertise, passion, and innovation in the realm of development. Features responsive design and dynamic layout for a seamless user experience.',
+    image: omniImage, 
     techStack: ['HTML', 'CSS', 'JavaScript']
-  }
+  },
 ];
 
   const [isExpanded, setIsExpanded] = useState(false);
