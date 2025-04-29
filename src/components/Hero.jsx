@@ -172,7 +172,8 @@ const projects = [
         `}
       </style>
 
-      <section className="relative flex flex-col pt-40 overflow-hidden text-white px-4 sm:px-6 md:pl-[160px] md:pr-[160px] lg:pl-[200px] lg:pr-[200px] xl:pl-[240px] xl:pr-[240px]">
+      <section className="relative flex flex-col pt-40 overflow-hidden text-white">
+      {/* px-4 sm:px-6 md:pl-[160px] md:pr-[160px] lg:pl-[200px] lg:pr-[200px] xl:pl-[240px] xl:pr-[240px] */}
         {/* Top Bar */}
         <div id='home' className="absolute top-0 left-0 w-full px-4 sm:px-6 md:px-[160px] lg:px-[200px] xl:px-[150px] py-4 text-xs sm:text-sm tracking-widest z-10 border-b-[2px] border-stone-600/40">
           <div className="hidden lg:flex justify-between items-center">
