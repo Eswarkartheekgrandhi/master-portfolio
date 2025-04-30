@@ -14,6 +14,7 @@ import mongodbImage from '../assets/mongodb.png';
 import cssImage from '../assets/css.png';
 import picture from '../assets/pic1.jpg';
 import omniImage from '../assets/omni.png';
+import lcImage from '../assets/lc.jpg';
 import figmaImage from '../assets/figma.svg';
 import webdImage from '../assets/webd.png';
 import iiithImage from '../assets/iiith.jpeg';
@@ -136,7 +137,7 @@ const projects = [
     pages: 1,
     theme: 'Light Theme',
     description: 'An advanced tool for multilingual communication, providing text extraction, semantic language conversion, and enhanced multilingual communication capabilities.',
-    image: '/images/lc-platform-thumbnail.png', 
+    image: lcImage, 
     techStack: ['ReactJS', 'Flask', 'PostgreSQL', 'Text Processing', 'Model Integration']
   },
   // {
