@@ -18,6 +18,7 @@ import lcImage from '../assets/lc.jpg';
 import figmaImage from '../assets/figma.svg';
 import webdImage from '../assets/webd.png';
 import iiithImage from '../assets/iiith.jpeg';
+import EMSImage from '../assets/EMS.png';
 import vsImage from '../assets/vs.png';
 import dockerImage from '../assets/docker.webp';
 import nodejsImage from '../assets/nodejs.png';
@@ -140,16 +141,16 @@ const projects = [
     image: lcImage, 
     techStack: ['ReactJS', 'Flask', 'PostgreSQL', 'Text Processing', 'Model Integration']
   },
-  // {
-  //   title: 'OmniFood',
-  //   link: 'https://omnifood-554.netlify.app/',
-  //   type: 'Web Development',
-  //   pages: 4,
-  //   theme: 'Dark Theme',
-  //   description: 'Showcasing expertise, passion, and innovation in the realm of development. Features responsive design and dynamic layout for a seamless user experience.',
-  //   image: omniImage, 
-  //   techStack: ['HTML', 'CSS', 'JavaScript']
-  // },
+  {
+    title: 'Electricity Management System',
+    link: '#',
+    type: 'Java Web Application',
+    pages: 4,
+    theme: 'Dark Theme',
+    description: 'Electricity Management System is a Java-based web application that allows users to register, log in, view/pay bills, and submit complaints. Administrators can manage accounts and generate bills, making electricity service management more efficient and user-friendly.',
+    image: EMSImage, 
+    techStack: ['HTML', 'CSS', 'JavaScript', 'JSP', 'Servlet', 'Derby', 'JDBC', 'GitBlit']
+  },
 ];
 
   const [isExpanded, setIsExpanded] = useState(false);
